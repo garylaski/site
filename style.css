@@ -1,3 +1,4 @@
+@charset "utf-8";
 @media (prefers-color-scheme: dark) {
     :root {
         --bg-color: black;
