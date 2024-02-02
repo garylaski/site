@@ -38,11 +38,15 @@
             </figure>
             <div>
                 <p>The backend consists of a Golang application that serves the webpage and interacts with our digitally controlled ICs. Taking advantage of Go’s built-in concurrency via Goroutines and Channels, the backend runs three control loops in parallel. First is the PCM audio loop, which reads data from our ADC ALSA device, converting it to the proper data type and sending it over a channel. The second loop maintains an active websocket connection with the client, and forwards audio data from the channel to the client via the websocket. Finally, we have our command loop, which handles command data sent from the client over the websocket. Incoming command data is parsed and passed to our hardware functions, which open the proper SPI or I2C device and send corresponding data.</p>
+                <p>See the repositories for the <a href="https://github.com/garylaski/vme1">backend</a> and <a href="https://github.com/garylaski/vme1-config">embedded system configuration</a>.</p>
             </div>
         </div>
         <h3>PCB Design</h3>
         <div class="flex-row">
-            <p>The PCB was designed in EAGLE, and is a 4-layer PCB with ground and power layers, and separate analog and digital sides. The analog side contains the audio circuitry, while the digital side contains the microcontroller and digital ICs. The PCB was designed with audio performance in mind, and includes a ground plane, power plane, and separation between analog and digital components. The PCB was designed to be as compact as possible, while also having ergonomic testing capability.</p>
+            <div>
+                <p>The PCB was designed in EAGLE, and is a 4-layer PCB with ground and power layers, and separate analog and digital sides. The analog side contains the audio circuitry, while the digital side contains the microcontroller and digital ICs. The PCB was designed with audio performance in mind, and includes a ground plane, power plane, and separation between analog and digital components. The PCB was designed to be as compact as possible, while also having ergonomic testing capability.</p>
+                <p>See the repository for the <a href="https://github.com/garylaski/vme1-eagle">EAGLE schematic and board</a>.</p>
+            </div>
             <figure>
                 <img src="pcb.png" style="width: 40rem" alt="PCB Schematic">
                 <figcaption>PCB Schematic</figcaption>
